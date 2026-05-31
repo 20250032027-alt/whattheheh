@@ -27,6 +27,33 @@
   --sans: 'IBM Plex Sans', sans-serif;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111110;
+    --surface: #1a1917;
+    --surface2: #222120;
+    --border: #2e2c2a;
+    --border-strong: #3e3c39;
+    --text: #e8e4dc;
+    --muted: #7a7670;
+    --faint: #575450;
+
+    --smooth: #4caf7d;
+    --smooth-bg: #0e1f16;
+    --smooth-border: #1e4030;
+
+    --stumbled: #e07a45;
+    --stumbled-bg: #1f1208;
+    --stumbled-border: #3d2010;
+
+    --twisted: #d4607a;
+    --twisted-bg: #1f0d12;
+    --twisted-border: #3d1520;
+
+    --accent: #e8e4dc;
+  }
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 16px; }
@@ -571,10 +598,14 @@ button:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
 }
 
 .boss-intro {
-  background: var(--text);
-  color: var(--bg);
+  background: #1c1a17;
+  color: #f5f2ec;
   border-radius: var(--radius);
   padding: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .boss-intro { background: #e8e4dc; color: #111110; }
 }
 
 .boss-intro-tag {

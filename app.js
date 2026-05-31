@@ -1,5 +1,11 @@
 'use strict';
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+
 const PENALTY = 3;
 const STORAGE_KEY = 'heh_progress_v1';
 
