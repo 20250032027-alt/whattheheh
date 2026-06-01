@@ -10,26 +10,23 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div id="app">
 
-  <!-- HOME SCREEN -->
+  <!-- HOME -->
   <div id="home-screen" class="screen active">
     <header class="home-header">
       <div class="wordmark">heh.</div>
       <div class="tagline">bisaya, actually spoken</div>
     </header>
-
     <main class="home-main">
       <div class="levels-grid" id="levels-grid"></div>
     </main>
-
     <footer class="home-footer">
       <div class="streak-row" id="streak-row"></div>
     </footer>
   </div>
 
-  <!-- DRILL SCREEN -->
+  <!-- DRILL / BOSS (shared shell) -->
   <div id="drill-screen" class="screen">
     <header class="drill-header">
       <button class="back-btn" id="back-btn" aria-label="Go back to levels">
@@ -40,53 +37,40 @@
       <div class="drill-level-name" id="drill-level-name"></div>
       <div class="drill-progress-text" id="drill-progress-text"></div>
     </header>
-
     <div class="progress-track">
       <div class="progress-fill" id="progress-fill"></div>
     </div>
-
     <main class="drill-main">
       <div class="chat-thread" id="chat-thread"></div>
-
       <div class="drill-zone" id="drill-zone">
         <div class="penalty-bar" id="penalty-bar">
           <span id="penalty-msg"></span>
           <div class="penalty-dots" id="penalty-dots"></div>
         </div>
-
         <div class="phrase-card" id="phrase-card">
           <div class="speaker-label" id="speaker-label"></div>
           <div class="phrase-text" id="phrase-text"></div>
-          <div class="phrase-roman" id="phrase-roman"></div>
           <div class="phrase-english" id="phrase-english"></div>
         </div>
-
         <div class="drill-cue" id="drill-cue">say it out loud, then mark how it felt</div>
-
         <div class="mark-row">
-          <button class="mark-btn mark-smooth" onclick="mark('smooth')" aria-label="Mark as smooth">
-            <span class="mark-label">smooth</span>
-          </button>
-          <button class="mark-btn mark-stumbled" onclick="mark('stumbled')" aria-label="Mark as stumbled">
-            <span class="mark-label">stumbled</span>
-          </button>
-          <button class="mark-btn mark-twisted" onclick="mark('twisted')" aria-label="tongue-twisted">
-            <span class="mark-label">twisted</span>
-          </button>
+          <button class="mark-btn mark-smooth"   onclick="mark('smooth')"   aria-label="Smooth">  <span class="mark-label">smooth</span></button>
+          <button class="mark-btn mark-stumbled" onclick="mark('stumbled')" aria-label="Stumbled"><span class="mark-label">stumbled</span></button>
+          <button class="mark-btn mark-twisted"  onclick="mark('twisted')"  aria-label="Twisted"> <span class="mark-label">twisted</span></button>
         </div>
       </div>
     </main>
   </div>
 
-  <!-- COMPLETE SCREEN -->
+  <!-- COMPLETE -->
   <div id="complete-screen" class="screen">
     <main class="complete-main">
       <div class="complete-inner">
         <div class="complete-level-tag" id="complete-level-tag"></div>
         <h1 class="complete-title" id="complete-title"></h1>
+        <div class="complete-stars" id="complete-stars"></div>
         <p class="complete-sub" id="complete-sub"></p>
-
-        <div class="score-grid">
+        <div class="score-grid" id="complete-score-grid">
           <div class="score-cell">
             <div class="score-num smooth-col" id="score-smooth">0</div>
             <div class="score-lbl">smooth</div>
@@ -100,17 +84,16 @@
             <div class="score-lbl">twisted</div>
           </div>
         </div>
-
         <div class="complete-actions">
           <button class="btn-primary" id="next-level-btn" onclick="goNextLevel()">next level</button>
           <button class="btn-ghost" onclick="retryLevel()">try again</button>
+          <button class="btn-ghost" onclick="renderHome()">back to levels</button>
         </div>
       </div>
     </main>
   </div>
 
 </div>
-
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

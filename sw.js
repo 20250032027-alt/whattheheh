@@ -1,4 +1,4 @@
-const CACHE = 'heh-v1';
+const CACHE = 'heh-v2';
 
 const CORE = [
   '/',
